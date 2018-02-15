@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fhirServer = axios.create({
-  //baseURL: "",
+  // baseURL: "",
   credentials: 'same-origin',
   headers: {
     "Content-Type": "application/json"
