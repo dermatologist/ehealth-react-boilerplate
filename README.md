@@ -2,7 +2,7 @@
 [![generator-create-redux-app](https://img.shields.io/badge/built%20with-generator--create--redux--app-brightgreen.svg)](https://github.com/jonidelv/generator-create-redux-app)
 
 ## About this project
-* Rename the config.example.json file to config.json and add access credentials.
+* Rename the /config/index.example.js file to index.js and add access credentials.
 * Rename /src/services/crud.example.js to crud.js and add the base URL.
 ## Work in Progress
 

@@ -1,16 +1,12 @@
 import crudService from "./crudService";
-import contextService from "./contextService";
+import contextService from "../config";
 
 export default class drugService {
 
 
   static getDrugs(message) {
-    const context = contextService.getConfig();
-    console.log(context);
-    context.params.add({
-      name: "message",
-      value: message
-    });
+    const context = contextService;
+    console.log(message);
     return crudService.postResource(context)
   }
 

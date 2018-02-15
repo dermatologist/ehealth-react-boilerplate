@@ -1,4 +1,4 @@
-{
+export const config = {
   "name": "ehealth innovation boilerplate",
   "version": "0.1.0",
   "author": "Bell Eapen",
@@ -48,4 +48,4 @@
       "value": "XMLHttpRequest"
     }
   ]
-}
+};

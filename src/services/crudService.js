@@ -11,7 +11,7 @@ export default class crudService {
   }
 
   static postResource(resource) {
-    return fhirServer.post(resource);
+    return fhirServer.post('/', resource);
   }
 
   // static getResource(baseUrl, uri, _id, _version) {

@@ -17,5 +17,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea
-/src/config.json
+/src/config/index.js
 /src/services/crud.js
