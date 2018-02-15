@@ -1,5 +1,13 @@
-# Ehealth React Boilerplate
+# Ehealth Innovation Lab React Redux
 [![generator-create-redux-app](https://img.shields.io/badge/built%20with-generator--create--redux--app-brightgreen.svg)](https://github.com/jonidelv/generator-create-redux-app)
+
+## About this project
+This is a boilerplate to access the resources at eHealth innovation lab. 
+* Rename the config.example.json file to config.json and add access credentials.
+* Rename /src/services/crud.example.js to crud.js and add the base URL.
+## Work in Progress
+
+This is still work in progress. A helping hand will be highly appreciated.
 
 This project was generated with [Create Redux App](https://github.com/jonidelv/generator-create-redux-app). Refer to `docs/create-redux-app` to find more information on how to perform common tasks.
 
