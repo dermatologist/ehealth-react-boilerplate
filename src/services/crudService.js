@@ -10,13 +10,13 @@ export default class crudService {
     return fhirServer.get(url);
   }
 
-  // postResource(url, resource) {
-  //   return fhirServer.post(url, resource);
-  // }
-  //
-  static getResource(baseUrl, uri, _id, _version) {
-    return fhirServer.get(`${baseUrl}${uri}/${_id}/_history/${_version}?_format=json`);
+  static postResource(resource) {
+    return fhirServer.post(resource);
   }
+
+  // static getResource(baseUrl, uri, _id, _version) {
+  //   return fhirServer.get(`${baseUrl}${uri}/${_id}/_history/${_version}?_format=json`);
+  // }
 
   // updateResource(url, resource) {
   //   return fhirServer.put(`${url}/${resource._id}`, resource);
