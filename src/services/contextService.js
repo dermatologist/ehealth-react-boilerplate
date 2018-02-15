@@ -1,9 +1,9 @@
-import {fhirServer} from './crud';
+import crudService from "./crudService";
 
 export default class contextService {
 
   static getConfig() {
-    return fhirServer.getResources('config.json');
+    return crudService.getResources('config.json');
   }
 
 }
