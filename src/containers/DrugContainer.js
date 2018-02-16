@@ -31,7 +31,7 @@ class DrugContainer extends React.Component {
 
 
   componentDidMount = () => {
-    this.props.getDrugs('')
+    this.props.getDrugs()
 
   };
 

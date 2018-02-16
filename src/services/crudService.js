@@ -6,8 +6,8 @@ import {fhirServer} from './crud';
 export default class crudService {
 
 
-  static getResources(url) {
-    return fhirServer.get(url);
+  static getResources(_service, _function, _id) {
+    return fhirServer.get(`${_service}/${_function}?${_id}`);
   }
 
   static postResource(resource) {
