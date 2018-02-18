@@ -7,7 +7,9 @@ export default class crudService {
 
 
   static getResources(_service, _function, _id) {
-    return fhirServer.get(`${_service}/${_function}?${_id}`);
+    // return fhirServer.get(`${_service}/${_function}?${_id}`); // TODO: To change
+    return fhirServer.get(`${_function}/${_id}`);
+
   }
 
   static postResource(resource) {

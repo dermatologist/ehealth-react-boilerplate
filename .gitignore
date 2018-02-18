@@ -18,4 +18,6 @@ yarn-error.log*
 
 .idea
 /src/config/index.js
+/src/config/config.js
 /src/services/crud.js
+mock-api.json
