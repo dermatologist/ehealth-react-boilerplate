@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import pure from 'recompose/pure'
-import styled from 'styled-components'
+// import styled from 'styled-components'
+import {Card, CardActions, CardHeader, CardText, CardTitle} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
-const Intro = styled.p`font-size: large;`;
+// const Intro = styled.p`font-size: large;`;
 
 function Drugs({drug}, {index}) {
   if (drug.id == null) {
@@ -15,24 +17,29 @@ function Drugs({drug}, {index}) {
   }
 
   return (
-    <section>
-      <Intro>
-        {index}
 
-        <b>ID:</b> {drug.id}<br/>
+    <Card>
+      <CardHeader
+        title={drug.resourceType}
+        subtitle={index}
+        avatar="images/medicine.png"
+      />
 
-        <b>ResourceType:</b> {drug.resourceType}<br/>
-        <i>{drug.product.form.text}</i><br/>
-      </Intro>
-      <b> Names with coding system in brackets.</b><br/>
+      <CardTitle title={drug.id} subtitle={drug.product.form.text}/>
+      <CardText>
 
-      {drug.code.coding.map((name, index2) => {
-        return (<div key={index2}>{name.display}
-          <small>({name.system})</small>
-        </div>);
-      })}
+        {drug.code.coding.map((name, index2) => {
+          return (<div key={index2}>{name.display}
+            <small>({name.system})</small>
+          </div>);
+        })}
 
-    </section>
+      </CardText>
+      <CardActions>
+        <FlatButton label="View"/>
+      </CardActions>
+    </Card>
+
   )
 
 }

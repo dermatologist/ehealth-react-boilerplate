@@ -18,6 +18,7 @@
     "redux-promise-middleware": "^5.0.0",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
+    "material-ui": "^0.20.0",
     "styled-components": "^2.3.0"
   },
   "devDependencies": {
