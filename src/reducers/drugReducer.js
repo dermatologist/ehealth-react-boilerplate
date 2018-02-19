@@ -11,7 +11,7 @@ export default function drugReducer(state = initialState, action) {
         fetching: false,
         fetched: true,
         id: action.payload.data.id,
-        resources: action.payload.data.resource.entry,
+        resources: action.payload.data.resource.entry[0].resource.contained,
       };
     case `${GET_DRUGS}_REJECTED`:
       return {...state, fetching: false, error: action.payload};

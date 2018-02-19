@@ -63,7 +63,7 @@ class DrugContainer extends React.Component {
 
     return (
       this.props.drug.resources.map((item, index) => {
-        return (<div key={item.fullUrl}><Drugs
+        return (<div key={item.id}><Drugs
           drug={item} index={index}
         />
         </div>);
