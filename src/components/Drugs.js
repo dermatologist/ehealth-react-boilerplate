@@ -22,7 +22,16 @@ function Drugs({drug}, {index}) {
         <b>ID:</b> {drug.id}<br/>
 
         <b>ResourceType:</b> {drug.resourceType}<br/>
+        <i>{drug.product.form.text}</i><br/>
       </Intro>
+      <b> Names with coding system in brackets.</b><br/>
+
+      {drug.code.coding.map((name, index2) => {
+        return (<div key={index2}>{name.display}
+          <small>({name.system})</small>
+        </div>);
+      })}
+
     </section>
   )
 

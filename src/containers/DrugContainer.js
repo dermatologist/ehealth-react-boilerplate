@@ -7,6 +7,8 @@ import Drugs from '../components/Drugs'
 
 import * as DrugActions from '../actions/drugAction'
 
+// import {GET_DRUGS} from "../constants/ActionTypes";
+
 class DrugContainer extends React.Component {
   static propTypes = {
     getDrugs: PropTypes.func.isRequired,
@@ -63,10 +65,18 @@ class DrugContainer extends React.Component {
 
     return (
       this.props.drug.resources.map((item, index) => {
-        return (<div key={item.id}><Drugs
-          drug={item} index={index}
-        />
-        </div>);
+
+        switch (item.resourceType) {
+          case `Medication`:
+            return <div key={item.id}><Drugs
+              drug={item} key={item.id} index={index}
+            />
+            </div>;
+          default:
+            return (<div key={item.id}>Unknown</div>)
+
+        }
+
       })
 
 
