@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {createSelector, createStructuredSelector} from 'reselect'
 import {bindActionCreators} from 'redux'
 import Drugs from '../components/Drugs'
+import Patient from '../components/Patient'
 
 import * as DrugActions from '../actions/drugAction'
 
@@ -70,6 +71,11 @@ class DrugContainer extends React.Component {
           case `Medication`:
             return <div key={item.id}><Drugs
               drug={item} key={item.id} index={index}
+            />
+            </div>;
+          case `Patient`:
+            return <div key={item.id}><Patient
+              pid={item} key={item.id} index={index}
             />
             </div>;
           default:
