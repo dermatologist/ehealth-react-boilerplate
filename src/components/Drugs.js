@@ -5,8 +5,8 @@ import styled from 'styled-components'
 
 const Intro = styled.p`font-size: large;`;
 
-function Drugs({drug}) {
-  if (drug.singleResource == null) {
+function Drugs({drug}, {index}) {
+  if (drug.fullUrl == null) {
     return null;
   } else if (drug.fetching) {
     return <div>Loading...</div>;
@@ -17,8 +17,8 @@ function Drugs({drug}) {
   return (
     <section>
       <Intro>
-        {drug.singleResource}<br/>
-        {drug.singleResource.publisher}
+        {drug.fullUrl}<br/>
+        {index}
       </Intro>
     </section>
   )

@@ -15,6 +15,7 @@ class DrugContainer extends React.Component {
       fetching: PropTypes.bool,
       fetched: PropTypes.bool,
       error: PropTypes.object,
+      id: PropTypes.any,
       singleResource: PropTypes.object,
     }),
   };
@@ -25,6 +26,7 @@ class DrugContainer extends React.Component {
       fetching: false,
       fetched: false,
       error: null,
+      id: null,
       singleResource: null,
     }
   };
@@ -50,26 +52,24 @@ class DrugContainer extends React.Component {
 
   render() {
 
-    if (this.props.drug.fetched) {
-      const items = this.props.drug.singleResource.item;
-      console.log(items);
-      items.forEach((item) => {
-        const buff = item;
-        buff.title = item.text;
-        if (item.type === 'text')
-          buff.type = 'string';
-        if (item.type === 'open-choice')
-          buff.type = 'string';
-        this.schema.properties[item.linkId] = buff
-      })
+    const drug = this.props.drug;
+    if (drug.id == null) {
+      return null;
+    } else if (drug.fetching) {
+      return <div>Loading...</div>;
+    } else if (drug.length === 0) {
+      return <div>None</div>;
     }
 
     return (
+      this.props.drug.resources.map((item, index) => {
+        return (<div key={item.fullUrl}><Drugs
+          drug={item} index={index}
+        />
+        </div>);
+      })
 
-      <div><Drugs
-        drug={this.props.drug}
-      />
-      </div>
+
 
     )
   }
