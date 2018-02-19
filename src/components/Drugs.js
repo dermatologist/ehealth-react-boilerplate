@@ -17,8 +17,18 @@ function Drugs({drug}, {index}) {
   return (
     <section>
       <Intro>
-        {drug.fullUrl}<br/>
         {index}
+
+        <b>URL:</b> {drug.fullUrl}<br/>
+        <b>ID:</b> {drug.resource.id}<br/>
+        <b>Patient:</b> {drug.resource.patient.reference}<br/>
+        <b>Medication:</b>{drug.resource.medicationReference.reference}<br/>
+        <b>Identifier:</b><i>(System)</i>{drug.resource.identifier.system}.
+        <i>(Value):</i>{drug.resource.identifier.value}<br/>
+        <b>Days Supply:</b>{drug.resource.daysSupply.value}<br/>
+        <b>Quantity:</b>{drug.resource.quantity.value}<br/>
+        <b>When Handed Over:</b>{drug.resource.whenHandedOver}<br/>
+
       </Intro>
     </section>
   )
