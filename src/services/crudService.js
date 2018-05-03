@@ -131,23 +131,25 @@ export default class crudService {
 
   static postResource(_service, _function, _id, _hcn) {
 
+    console.log(fhirServer);
+    const _query = {};
 
-    const query = {};
+    _query["patient:patient.identifier"] = `${_id}${_hcn}`;
 
-    query["patient:patient.identifier"] = `${_id}${_hcn}`;
-
-    query._format = "fhir+json";
+    _query._format = "fhir+json";
 
     let resp = null;
 
     const fsu = new FhirUtils();
 
+    console.log(_query, _function);
     fhirServer
       .search({
         type: _function,
-        query
+        query: _query
       })
       .then((res) => {
+        console.log(_query);
         console.log(fsu.parseJSONBundle(res.data));
         resp = fsu.parseJSONBundle(res.data);
       })

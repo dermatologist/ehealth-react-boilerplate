@@ -1,8 +1,8 @@
-import React from 'react'
-import {CounterContainer, DrugContainer} from 'containers'
-import {Header} from 'components'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-import styled from 'styled-components'
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import styled from "styled-components";
+import { CounterContainer, DrugContainer } from "../containers";
+import { Header } from "../components";
 
 const Container = styled.div`text-align: center;`;
 
