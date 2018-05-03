@@ -4,5 +4,6 @@ export const configparams = {
   "author": "Bell Eapen",
   "id": "",
   "service": "dispense-service",
-  "function": "MedicationDispense"
+  "function": "MedicationDispense",
+  "hcn": ""
 };
