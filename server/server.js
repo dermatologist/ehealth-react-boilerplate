@@ -17,6 +17,14 @@ app.use("/api", (req, res) => {
       "ClientTxID": uuidv4()
     }
   };
-  req.pipe(request(api)).pipe(res);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-License-Text, X-Sender-Id, ClientTxID, Origin, X-Requested-With, Content-Type, Accept");
+
+  if (req.method === "OPTIONS") {
+    // respond with 200
+    res.send(200);
+  } else {
+    req.pipe(request(api)).pipe(res);
+  }
 });
 app.listen(5000);
