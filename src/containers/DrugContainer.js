@@ -1,14 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {createSelector, createStructuredSelector} from 'reselect'
-import {bindActionCreators} from 'redux'
-import Drugs from '../components/Drugs'
-import Patient from '../components/Patient'
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { createSelector, createStructuredSelector } from "reselect";
+import { bindActionCreators } from "redux";
+import Drugs from "../components/Drugs";
+import Patient from "../components/Patient";
 
-import * as DrugActions from '../actions/drugAction'
-
-// import {GET_DRUGS} from "../constants/ActionTypes";
+import * as DrugActions from "../actions/drugAction";
 
 class DrugContainer extends React.Component {
   static propTypes = {
@@ -66,27 +64,28 @@ class DrugContainer extends React.Component {
 
     return (
       this.props.drug.resources.map((item, index) => {
+        const indents = [];
+        for (const subitem in item) {
+          switch (subitem) {
+            case `Medication`:
+              indents.push(<div key={item.id}><Drugs
+                drug={item[subitem]} key={item[subitem].id} index={index}
+              />
+              </div>);
+              break;
+            case `DispensePatient`:
+              indents.push(<div key={item.id}><Patient
+                pid={item[subitem]} key={item[subitem].id} index={index}
+              />
+              </div>);
+              break;
+            default:
+              indents.push(<div key={item.id}>Unknown</div>);
 
-        switch (item.resourceType) {
-          case `Medication`:
-            return <div key={item.id}><Drugs
-              drug={item} key={item.id} index={index}
-            />
-            </div>;
-          case `Patient`:
-            return <div key={item.id}><Patient
-              pid={item} key={item.id} index={index}
-            />
-            </div>;
-          default:
-            return (<div key={item.id}>Unknown</div>)
-
+          }
         }
-
+        return indents;
       })
-
-
-
     )
   }
 }
