@@ -5,7 +5,9 @@ This is a React-Redux boilerplate for developing web applications that interact 
 Queries are made by submitting a health card number to the test API. This can be used for DHIR with minimal modifications.
 
 
-## The API does not allow OPTIONS pre-flight call. Options call cannot be avoided as header parameters need to be set. As a workaround, a proxy server is provided in the server folder that intercepts OPTION requests and sets appropriate headers. The API details are available [here](https://www.innovation-lab.ca/search-medication-dispense-r2/).
+## API
+
+The API does not allow OPTIONS pre-flight call. Options call cannot be avoided as header parameters need to be set. As a workaround, a proxy server is provided in the server folder that intercepts OPTION requests and sets appropriate headers. The API details are available [here](https://www.innovation-lab.ca/search-medication-dispense-r2/).
 
 * STEP 1: Sign up for a free test account at the [innovation-lab website](https://www.innovation-lab.ca/) and get you access key.
 
