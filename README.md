@@ -33,7 +33,7 @@ The API does not allow OPTIONS pre-flight call. As a workaround, a proxy server 
 
 * STEP 8: Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-# Conceptual Diagram from my [OpenMRS OWA boilerplate](https://github.com/dermatologist/openmrs-owa-react-boilerplate). (This is similar)
+## Conceptual Diagram from my [OpenMRS OWA boilerplate](https://github.com/dermatologist/openmrs-owa-react-boilerplate). (This is similar)
 
 ![OpenMRS OWA React](https://raw.github.com/dermatologist/openmrs-owa-react-boilerplate/master/docs/owa-react.png)
 
